@@ -16,8 +16,12 @@ public class ConsumeController {
     @Autowired
     RestTemplate restTemplate;
 
+    @Autowired
+    HelloService helloService;
+
+
     @RequestMapping(value = "consume", method = RequestMethod.GET)
     public String helloConsume() {
-        return restTemplate.getForEntity("http://EUREKA-CLIENT/hello", String.class).getBody();
+        return helloService.helloService();
     }
 }
