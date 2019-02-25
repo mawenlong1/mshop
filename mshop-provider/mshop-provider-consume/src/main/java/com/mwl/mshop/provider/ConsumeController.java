@@ -1,11 +1,11 @@
 package com.mwl.mshop.provider;
 
 import com.mwl.mshop.provider.api.HelloService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
 
 /**
  * @author mawenlong
@@ -14,10 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class ConsumeController {
 
-    @Autowired
-    RestTemplate restTemplate;
-
-    @Autowired
+    @Resource
     HelloService helloService;
 
     @RequestMapping(value = "consume", method = RequestMethod.GET)
