@@ -2,17 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>mshop</artifactId>
+    <groupId>com.mwl.mshop</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.mwl.mshop</groupId>
-  <artifactId>mshop</artifactId>
-  <packaging>pom</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>mshop-server</module>
-    <module>mshop-provider-api</module>
-    <module>mshop-provider</module>
-  </modules>
+  <groupId>com.mwl.mshop.provider</groupId>
+  <artifactId>mshop-provider</artifactId>
 
 
 </project>

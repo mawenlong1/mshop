@@ -1,0 +1,19 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://${eureka.instance.hostname}:8760
+
+eureka:
+  server:
+    enable-self-preservation: false
+  instance:
+    hostname: localhost
+  client:
+#    是否将自己注册到eureka上，默认true
+    registerWithEureka: false
+#    是否从其他eureka上获取注册信息，默认true
+    fetchRegistry: false
+    serviceUrl:
+#      与eureka交互的地址
+      defaultZone: http://admin:123123@${eureka.instance.hostname}:${server.port}/eureka
