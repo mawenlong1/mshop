@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eureka-consume
+    name: mshop-gateway
   cloud:
     config:
       profile: dev
@@ -13,4 +13,5 @@ eureka:
       defaultZone: http://admin:123123@localhost:8761/eureka/
   instance:
     hostname: localhost
-
+zuul:
+  sensitive-headers:

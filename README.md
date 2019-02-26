@@ -10,4 +10,4 @@
     - mshop-gateway   5050
     - mshop-hystrix-dashboard  2020
  
- 启动顺序：erureka->config->
+ 启动顺序：erureka->config->**
