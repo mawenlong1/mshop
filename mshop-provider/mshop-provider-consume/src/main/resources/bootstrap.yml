@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    config:
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: mshop-config
+

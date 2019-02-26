@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * @author mawenlong
  * @date 2019/02/25
@@ -17,8 +15,6 @@ public class HelloController {
 
     @RequestMapping(value = "hello", method = RequestMethod.GET)
     public String index() throws InterruptedException {
-        // ServiceInstance instance = client.get
-        TimeUnit.SECONDS.sleep(100);
         return "hello";
     }
 }
