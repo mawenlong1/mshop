@@ -7,10 +7,19 @@ spring:
       discovery:
         enabled: true
         service-id: mshop-config
+    stream:
+      binders:
+        message:
+           group: demo
+      bindings:
+        inputMessage:
+          destination: message
+        outputMessage:
+          destination: message
+
 eureka:
   client:
     service-url:
       defaultZone: http://admin:123123@localhost:8761/eureka/
   instance:
     hostname: localhost
-

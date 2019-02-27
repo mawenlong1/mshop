@@ -10,4 +10,7 @@
     - mshop-gateway   5050
     - mshop-hystrix-dashboard  2020
  
+中间件：
+rabbitmq：5672  http://localhost:15672/
  启动顺序：erureka->config->**
+ 
