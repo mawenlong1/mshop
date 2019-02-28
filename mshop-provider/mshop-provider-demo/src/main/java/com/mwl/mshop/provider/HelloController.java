@@ -17,6 +17,7 @@ public class HelloController {
 
     @RequestMapping(value = "hello", method = RequestMethod.GET)
     public String index() throws InterruptedException {
+        System.out.println("client  =======  被调用   =======");
         return "hello";
     }
     @Autowired

@@ -19,6 +19,7 @@ public class ConsumeController {
 
     @RequestMapping(value = "consume", method = RequestMethod.GET)
     public String helloConsume() {
+        System.out.println("consume:=======  调用 client  =======");
         return helloService.hello();
     }
 }

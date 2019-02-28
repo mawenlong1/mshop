@@ -16,7 +16,10 @@ spring:
           destination: message
         outputMessage:
           destination: message
-
+  rabbitmq:
+    host:  111.231.228.108
+    username: guest
+    password: guest
 eureka:
   client:
     service-url:
