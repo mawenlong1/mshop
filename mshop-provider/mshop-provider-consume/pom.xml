@@ -55,11 +55,19 @@
       <artifactId>spring-cloud-config-client</artifactId>
     </dependency>
     <!--服务追踪-->
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.cloud</groupId>-->
+      <!--<artifactId>spring-cloud-starter-sleuth</artifactId>-->
+    <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.cloud</groupId>-->
+      <!--<artifactId>spring-cloud-sleuth-zipkin</artifactId>-->
+    <!--</dependency>-->
+    <!--包含以上两个-->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-sleuth</artifactId>
+      <artifactId>spring-cloud-starter-zipkin</artifactId>
     </dependency>
-
 
     <dependency>
       <groupId>org.springframework.boot</groupId>

@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @RequestMapping(value = "hello", method = RequestMethod.GET)
-    public String index() throws InterruptedException {
+    public String index() {
         System.out.println("client  =======  被调用   =======");
         return "hello";
     }
+
     @Autowired
     StreamClient streamClient;
 

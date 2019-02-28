@@ -12,5 +12,7 @@
  
 中间件：
 rabbitmq：5672  http://localhost:15672/
+zipkin:
+docker run -d -p 9411:9411 openzipkin/zipkin
  启动顺序：erureka->config->**
  
