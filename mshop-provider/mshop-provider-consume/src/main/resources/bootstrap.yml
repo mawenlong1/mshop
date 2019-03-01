@@ -18,6 +18,3 @@ eureka:
       defaultZone: http://admin:123123@localhost:8761/eureka/
   instance:
     hostname: localhost
-logging:
-  level:
-    org.springframework.cloud.netflix.feign: debug
