@@ -1,10 +1,12 @@
 package com.mwl.mshop.provider;
 
 import com.mwl.mshop.provider.api.HelloService;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import javax.annotation.Resource;
 
@@ -14,6 +16,8 @@ import javax.annotation.Resource;
  */
 @RestController
 @Slf4j
+@EnableSwagger2
+@Api(value = "Consume Control", description = "测试controller", tags = "Swagger Test Control Tag")
 public class ConsumeController {
 
     @Resource
@@ -26,8 +30,8 @@ public class ConsumeController {
     }
 
 
-    @RequestMapping("callTest")
-    String callTest() {
+    @RequestMapping(value = "callTest", method = RequestMethod.GET)
+    public String callTest() {
         log.info("callTest!!!!!");
         return "callTest";
     }
