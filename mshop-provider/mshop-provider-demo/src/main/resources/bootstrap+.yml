@@ -10,7 +10,7 @@ spring:
     stream:
       binders:
         message:
-          group: demo
+           group: demo
       bindings:
         inputMessage:
           destination: message

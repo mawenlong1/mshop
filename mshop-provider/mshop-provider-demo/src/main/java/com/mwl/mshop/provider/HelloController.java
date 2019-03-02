@@ -1,11 +1,14 @@
 package com.mwl.mshop.provider;
 
+import com.mwl.mshop.provider.api.ConsumeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.support.MessageBuilder;
+import org.springframework.integration.support.MessageBuilder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author mawenlong
@@ -23,10 +26,18 @@ public class HelloController {
 
     @Autowired
     StreamClient streamClient;
+    @Resource
+    ConsumeService consumeService;
 
     @RequestMapping(value = "send", method = RequestMethod.GET)
     public void send() {
 //        streamClient.input().streamClient
         streamClient.output().send(MessageBuilder.withPayload("from sinkSender").build());
+    }
+
+    @RequestMapping("callTest")
+    public String callTest() {
+        log.info("=======");
+        return consumeService.callTest();
     }
 }
