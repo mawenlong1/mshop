@@ -25,7 +25,8 @@
     </sqlMapGenerator>
     <!--自动生成的*Mapper.java存放路径 -->
     <javaClientGenerator type="XMLMAPPER"
-                         targetPackage="com.mwl.mshop.provider.cmc.mapper" targetProject="src/main/java">
+                         targetPackage="com.mwl.mshop.provider.cmc.mapper"
+                         targetProject="src/main/java">
       <property name="enableSubPackages" value="true"/>
     </javaClientGenerator>
     <table tableName="cmc_commodity" domainObjectName="CmcCommodity"
@@ -34,11 +35,39 @@
            selectByExampleQueryId="false">
       <generatedKey column="ID" sqlStatement="selectuuid_short()"
                     identity="false"/>
-      <columnOverride column="description" jdbcType="VARCHAR" />
-      <columnOverride column="detail_html" jdbcType="VARCHAR" />
+      <columnOverride column="description" jdbcType="VARCHAR"/>
+      <columnOverride column="detail_html" jdbcType="VARCHAR"/>
     </table>
-    <!--<table tableName="teacher" domainObjectName="Tercher">-->
-      <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>-->
-    <!--</table>-->
+    <table tableName="cmc_brand" domainObjectName="CmcBrand"
+           enableCountByExample="false" enableUpdateByExample="false"
+           enableDeleteByExample="false" enableSelectByExample="false"
+           selectByExampleQueryId="false">
+      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
+    </table>
+    <table tableName="cmc_commodity_attribute" domainObjectName="CmcCommodityAttribute"
+           enableCountByExample="false" enableUpdateByExample="false"
+           enableDeleteByExample="false" enableSelectByExample="false"
+           selectByExampleQueryId="false">
+      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
+    </table>
+    <table tableName="cmc_commodity_attribute_category"
+           domainObjectName="CmcCommodityAttributeCategory"
+           enableCountByExample="false" enableUpdateByExample="false"
+           enableDeleteByExample="false" enableSelectByExample="false"
+           selectByExampleQueryId="false">
+      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
+    </table>
+    <table tableName="cmc_commodity_attribute_value" domainObjectName="CmcCommodityAttributeValue"
+           enableCountByExample="false" enableUpdateByExample="false"
+           enableDeleteByExample="false" enableSelectByExample="false"
+           selectByExampleQueryId="false">
+      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
+    </table>
+    <table tableName="cmc_commodity_category" domainObjectName="CmcCommodityCategory"
+           enableCountByExample="false" enableUpdateByExample="false"
+           enableDeleteByExample="false" enableSelectByExample="false"
+           selectByExampleQueryId="false">
+      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
+    </table>
   </context>
 </generatorConfiguration>
