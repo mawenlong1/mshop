@@ -1,1 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://111.231.228.108:3306/mshop_cmc?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  profiles:
+    active: dev
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.mwl.mshop.provider.cmc.model.bean
 
+server:
+  port: 7072

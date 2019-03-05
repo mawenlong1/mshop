@@ -2,7 +2,7 @@
 - mshop-provider
     - mshop-provider-consume  7071 
     - mshop-provider-demo   7070
-    - mshop-provider-cmc 商品管理中心
+    - mshop-provider-cmc     7072商品管理中心
 - mshop-provider-api
     - mshop-provider-demo-api
 - mshop-server
