@@ -1,6 +1,7 @@
 package com.mwl.mshop.provider.cmc.mapper;
 
-import com.mwl.mshop.provider.cmc.model.bean.CommodityAttributeVO;
+
+import com.mwl.mshop.provider.cmc.model.dto.CommodityAttributeVO;
 
 public interface CmcCommodityAttributeMapper {
     /**
