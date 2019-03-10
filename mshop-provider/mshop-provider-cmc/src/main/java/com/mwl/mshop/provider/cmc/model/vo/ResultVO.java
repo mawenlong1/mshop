@@ -38,4 +38,16 @@ public class ResultVO {
         this.data = result;
         return this;
     }
+
+    /**
+     * 普通成功返回
+     *
+     * @param data 获取的数据
+     */
+    public ResultVO success(Object data) {
+        code = SUCCESS;
+        message = "操作成功";
+        this.data = data;
+        return this;
+    }
 }

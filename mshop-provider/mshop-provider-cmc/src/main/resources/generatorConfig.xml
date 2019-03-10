@@ -29,26 +29,30 @@
                          targetProject="src/main/java">
       <property name="enableSubPackages" value="true"/>
     </javaClientGenerator>
-    <table tableName="cmc_commodity" domainObjectName="CmcCommodity">
-      <generatedKey column="ID" sqlStatement="selectuuid_short()"
-                    identity="false"/>
-      <columnOverride column="description" jdbcType="VARCHAR"/>
-      <columnOverride column="detail_html" jdbcType="VARCHAR"/>
-    </table>
-    <table tableName="cmc_brand" domainObjectName="CmcBrand">
-      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
-    </table>
-    <table tableName="cmc_commodity_attribute" domainObjectName="CmcCommodityAttribute">
-      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
-    </table>
-    <table tableName="cmc_commodity_attribute_category"
-           domainObjectName="CmcCommodityAttributeCategory">
-      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
-    </table>
-    <table tableName="cmc_commodity_attribute_value" domainObjectName="CmcCommodityAttributeValue">
-      <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
-    </table>
-    <table tableName="cmc_commodity_category" domainObjectName="CmcCommodityCategory">
+    <!--<table tableName="cmc_commodity" domainObjectName="CmcCommodity">-->
+      <!--<generatedKey column="ID" sqlStatement="selectuuid_short()"-->
+                    <!--identity="false"/>-->
+      <!--<columnOverride column="description" jdbcType="VARCHAR"/>-->
+      <!--<columnOverride column="detail_html" jdbcType="VARCHAR"/>-->
+    <!--</table>-->
+    <!--<table tableName="cmc_brand" domainObjectName="CmcBrand">-->
+      <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>-->
+    <!--</table>-->
+    <!--<table tableName="cmc_commodity_attribute" domainObjectName="CmcCommodityAttribute">-->
+      <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>-->
+    <!--</table>-->
+    <!--<table tableName="cmc_commodity_attribute_category"-->
+           <!--domainObjectName="CmcCommodityAttributeCategory">-->
+      <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>-->
+    <!--</table>-->
+    <!--<table tableName="cmc_commodity_attribute_value" domainObjectName="CmcCommodityAttributeValue">-->
+      <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>-->
+    <!--</table>-->
+    <!--<table tableName="cmc_commodity_category" domainObjectName="CmcCommodityCategory">-->
+      <!--<generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>-->
+    <!--</table>-->
+
+    <table tableName="cmc_sku_stock" domainObjectName="CmcSkuStock">
       <generatedKey column="ID" sqlStatement="select uuid_short()" identity="false"/>
     </table>
   </context>

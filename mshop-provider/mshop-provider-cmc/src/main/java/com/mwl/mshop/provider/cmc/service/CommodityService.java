@@ -1,8 +1,6 @@
 package com.mwl.mshop.provider.cmc.service;
 
-import com.mwl.mshop.provider.cmc.model.bean.CmcCommodity;
-
-import java.util.List;
+import com.mwl.mshop.provider.cmc.model.vo.PageResult;
 
 /**
  * @author mawenlong
@@ -10,5 +8,5 @@ import java.util.List;
  */
 public interface CommodityService {
 
-    List<CmcCommodity> list(Integer pageNum, Integer pageSize);
+    PageResult list(Integer pageNum, Integer pageSize);
 }

@@ -297,3 +297,60 @@ INSERT INTO `cmc_commodity_attribute_value` VALUES ('224', '29', '45', '4.7');
 INSERT INTO `cmc_commodity_attribute_value` VALUES ('225', '29', '46', '4G');
 INSERT INTO `cmc_commodity_attribute_value` VALUES ('226', '29', '47', 'IOS');
 INSERT INTO `cmc_commodity_attribute_value` VALUES ('227', '29', '48', '1960ml');
+
+
+-- ----------------------------
+-- Table structure for cmc_sku_stock
+-- ----------------------------
+DROP TABLE IF EXISTS `cmc_sku_stock`;
+CREATE TABLE `cmc_sku_stock` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `product_id` bigint(20) DEFAULT NULL,
+  `sku_code` varchar(64) NOT NULL COMMENT 'sku编码',
+  `price` decimal(10,2) DEFAULT NULL,
+  `stock` int(11) DEFAULT '0' COMMENT '库存',
+  `low_stock` int(11) DEFAULT NULL COMMENT '预警库存',
+  `sps` varchar(64) DEFAULT NULL COMMENT '销售属性',
+  `pic` varchar(255) DEFAULT NULL COMMENT '展示图片',
+  `sale` int(11) DEFAULT NULL COMMENT '销量',
+  `promotion_price` decimal(10,2) DEFAULT NULL COMMENT '单品促销价格',
+  `lock_stock` int(11) DEFAULT '0' COMMENT '锁定库存',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=utf8 COMMENT='sku的库存';
+
+-- ----------------------------
+-- Records of cmc_sku_stock
+-- ----------------------------
+INSERT INTO `cmc_sku_stock` VALUES ('1', '7', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('2', '8', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('3', '9', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('4', '10', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('5', '11', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('6', '12', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('7', '13', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('8', '14', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('9', '18', 'string', '100.00', '0', '5', 'string, string, string', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('10', '7', 'string', '0.00', '0', '0', 'string, string, sp3', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('11', '7', 'string', '0.00', '0', '0', 'string, string, sp33', 'string', '0', null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('12', '22', '111', '99.00', '0', null, 'x, M', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/1522738681.jpg', null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('13', '22', '112', '99.00', '0', null, 'xx,M', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/2018032614134591_20180326141345650 (4).png', null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('78', '23', '201806070023001', '99.00', '0', null, '米白色, M', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/1522738681.jpg', null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('79', '23', '201806070023002', '99.00', '0', null, '米白色, X', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/1522738681.jpg', null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('80', '23', '201806070023003', '99.00', '0', null, '浅黄色, M', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/2017091716493787_20170917164937650 (1).png', null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('81', '23', '201806070023004', '99.00', '0', null, '浅黄色, X', 'http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/images/20180604/2017091716493787_20170917164937650 (1).png', null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('90', '26', '201806070026001', '3788.00', '499', null, '金色, 16G', null, null, '3588.00', '-8');
+INSERT INTO `cmc_sku_stock` VALUES ('91', '26', '201806070026002', '3999.00', '500', null, '金色, 32G', null, null, '3799.00', '0');
+INSERT INTO `cmc_sku_stock` VALUES ('92', '26', '201806070026003', '3788.00', '500', null, '银色, 16G', null, null, '3588.00', '0');
+INSERT INTO `cmc_sku_stock` VALUES ('93', '26', '201806070026004', '3999.00', '500', null, '银色, 32G', null, null, '3799.00', '0');
+INSERT INTO `cmc_sku_stock` VALUES ('98', '27', '201808270027001', '2699.00', '97', null, '黑色, 32G', null, null, null, '-24');
+INSERT INTO `cmc_sku_stock` VALUES ('99', '27', '201808270027002', '2999.00', '100', null, '黑色, 64G',  null, null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('100', '27', '201808270027003', '2699.00', '100', null, '蓝色, 32G', null, null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('101', '27', '201808270027004', '2999.00', '100', null, '蓝色, 64G', null, null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('102', '28', '201808270028001', '649.00', '99', null, '金色, 16G', null, null, null, '-8');
+INSERT INTO `cmc_sku_stock` VALUES ('103', '28', '201808270028002', '699.00', '99', null, '金色, 32G',  null, null, null, '-8');
+INSERT INTO `cmc_sku_stock` VALUES ('104', '28', '201808270028003', '649.00', '100', null, '银色, 16G', null, null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('105', '28', '201808270028004', '699.00', '100', null, '银色, 32G', null, null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('106', '29', '201808270029001', '5499.00', '99', null, '金色, 32G',  null, null, null, '-8');
+INSERT INTO `cmc_sku_stock` VALUES ('107', '29', '201808270029002', '6299.00', '100', null, '金色, 64G', null, null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('108', '29', '201808270029003', '5499.00', '100', null, '银色, 32G',  null, null, null, '0');
+INSERT INTO `cmc_sku_stock` VALUES ('109', '29', '201808270029004', '6299.00', '100', null, '银色, 64G', null, null, null, '0');

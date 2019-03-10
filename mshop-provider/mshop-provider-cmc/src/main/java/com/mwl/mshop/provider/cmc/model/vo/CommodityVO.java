@@ -116,4 +116,6 @@ public class CommodityVO {
      * 商品详情页内容
      */
     private String detailHtml;
+
+    private String brandName;
 }

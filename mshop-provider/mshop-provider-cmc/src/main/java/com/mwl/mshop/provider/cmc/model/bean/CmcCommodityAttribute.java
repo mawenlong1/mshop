@@ -66,7 +66,7 @@ public class CmcCommodityAttribute {
     private Integer handAddStatus;
 
     /**
-     * 属性的类型；0->规格；1->参数
+     * 属性的类型；0->规格；1->参数。不同规格价格不一样，参数一般不变
      */
     private Integer type;
 
