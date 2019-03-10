@@ -1,7 +1,7 @@
 package com.mwl.mshop.provider.cmc.model.bean;
 
-import com.mwl.mshop.provider.cmc.model.dto.CommodityAttributeVO;
-import com.mwl.mshop.provider.cmc.model.dto.CommodityVO;
+import com.mwl.mshop.provider.cmc.model.vo.CommodityAttributeVO;
+import com.mwl.mshop.provider.cmc.model.vo.CommodityVO;
 import lombok.Data;
 
 /**

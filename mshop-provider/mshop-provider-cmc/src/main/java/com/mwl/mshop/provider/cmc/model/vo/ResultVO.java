@@ -1,0 +1,41 @@
+package com.mwl.mshop.provider.cmc.model.vo;
+
+import com.github.pagehelper.PageInfo;
+import lombok.Data;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * @author mawenlong
+ * @date 2019-03-10 14:54
+ */
+@Data
+public class ResultVO {
+
+    //操作成功
+    public static final int SUCCESS = 200;
+
+    private int code;
+    private String message;
+    private Object data;
+
+
+    /**
+     * 返回分页成功数据
+     */
+    public ResultVO pageSuccess(List data) {
+        PageInfo pageInfo = new PageInfo(data);
+        Map<String, Object> result = new HashMap<>();
+        result.put("pageSize", pageInfo.getPageSize());
+        result.put("totalPage", pageInfo.getPages());
+        result.put("total", pageInfo.getTotal());
+        result.put("pageNum", pageInfo.getPageNum());
+        result.put("list", pageInfo.getList());
+        code = SUCCESS;
+        message = "操作成功";
+        this.data = result;
+        return this;
+    }
+}

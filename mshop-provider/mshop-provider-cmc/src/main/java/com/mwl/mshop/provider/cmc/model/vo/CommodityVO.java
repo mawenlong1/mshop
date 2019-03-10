@@ -1,4 +1,4 @@
-package com.mwl.mshop.provider.cmc.model.dto;
+package com.mwl.mshop.provider.cmc.model.vo;
 
 import lombok.Data;
 
@@ -20,17 +20,17 @@ public class CommodityVO {
     /**
      * 品牌id
      */
-    private BrandVO brandVO;
+    private Long brandId;
 
     /**
      * 商品类别id
      */
-    private CommodityCategoryVO commodityCategoryVO;
+    private Long commodityCategoryId;
 
     /**
      * 商品属性分类id
      */
-    private CommodityAttributeCategoryVO commodityAttributeCategoryVO;
+    private Long commodityAttributeCategoryId;
 
     /**
      * 商品名称

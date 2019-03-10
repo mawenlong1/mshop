@@ -12,3 +12,9 @@ mybatis:
 
 server:
   port: 7072
+
+#pagehelper分页插件配置
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true

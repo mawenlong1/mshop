@@ -1,4 +1,4 @@
-package com.mwl.mshop.provider.cmc.model.dto;
+package com.mwl.mshop.provider.cmc.model.vo;
 
 import lombok.Data;
 
