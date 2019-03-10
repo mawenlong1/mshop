@@ -7,7 +7,7 @@ spring:
   profiles:
     active: dev
 mybatis:
-  mapper-locations: classpath:mapper/*Mapper.xml
+  mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.mwl.mshop.provider.cmc.model.bean
 
 server:

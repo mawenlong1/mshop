@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import java.util.Properties;
 
 @SpringBootApplication
-@MapperScan({ "com.mwl.mshop.provider.cmc.mapper" })
+@MapperScan({ "com.mwl.mshop.provider.cmc.mapper", "com.mwl.mshop.provider.cmc.mapper.dao" })
 public class MshopProviderCmcApplication {
 
     public static void main(String[] args) {
