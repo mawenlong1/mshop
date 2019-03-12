@@ -10,6 +10,11 @@ public interface BrandService {
 
     String getNameById(Long id);
 
-    PageResult list(Integer pageNum, Integer pageSize);
+    PageResult list(String keyword,Integer pageNum, Integer pageSize);
 
+    Boolean updateShowStatus(Long id, Integer showStatus);
+
+    Boolean updateFactoryStatus(Long id, Integer factoryStatus);
+
+    Boolean deleteBrand(Long id);
 }

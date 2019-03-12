@@ -10,6 +10,7 @@ import com.mwl.mshop.provider.cmc.utils.PageUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -30,10 +31,38 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
-    public PageResult list(Integer pageNum, Integer pageSize) {
+    public PageResult list(String keyword, Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        List<CmcBrand> cmcBrandList = brandMapper.selectByExample(new CmcBrandExample());
-
+        CmcBrandExample example = new CmcBrandExample();
+        example.setOrderByClause("sort desc");
+        CmcBrandExample.Criteria criteria = example.createCriteria();
+        if (!StringUtils.isEmpty(keyword)) {
+            criteria.andNameLike("%" + keyword + "%");
+        }
+        List<CmcBrand> cmcBrandList = brandMapper.selectByExample(example);
         return PageUtils.convertPageData(cmcBrandList, cmcBrandList);
+    }
+
+    @Override
+    public Boolean updateShowStatus(Long id, Integer showStatus) {
+        CmcBrand brand = new CmcBrand();
+        brand.setShowStatus(showStatus);
+        CmcBrandExample example = new CmcBrandExample();
+        example.createCriteria().andIdEqualTo(id);
+        return brandMapper.updateByExampleSelective(brand, example) == 1;
+    }
+
+    @Override
+    public Boolean updateFactoryStatus(Long id, Integer factoryStatus) {
+        CmcBrand brand = new CmcBrand();
+        brand.setFactoryStatus(factoryStatus);
+        CmcBrandExample brandExample = new CmcBrandExample();
+        brandExample.createCriteria().andIdEqualTo(id);
+        return brandMapper.updateByExampleSelective(brand, brandExample) == 1;
+    }
+
+    @Override
+    public Boolean deleteBrand(Long id) {
+        return brandMapper.deleteByPrimaryKey(id) == 1;
     }
 }

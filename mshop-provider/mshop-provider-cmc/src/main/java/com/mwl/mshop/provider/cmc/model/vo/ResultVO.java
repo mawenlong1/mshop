@@ -16,6 +16,8 @@ public class ResultVO {
 
     //操作成功
     public static final int SUCCESS = 200;
+    //操作失败
+    public static final int FAILED = 500;
 
     private int code;
     private String message;
@@ -48,6 +50,21 @@ public class ResultVO {
         code = SUCCESS;
         message = "操作成功";
         this.data = data;
+        return this;
+    }
+
+    public ResultVO success() {
+        code = SUCCESS;
+        message = "操作成功";
+        return this;
+    }
+
+    /**
+     * 普通失败提示信息
+     */
+    public ResultVO failed() {
+        this.code = FAILED;
+        this.message = "操作失败";
         return this;
     }
 }
