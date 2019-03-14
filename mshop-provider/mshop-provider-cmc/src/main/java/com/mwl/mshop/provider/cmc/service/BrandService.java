@@ -1,5 +1,6 @@
 package com.mwl.mshop.provider.cmc.service;
 
+import com.mwl.mshop.provider.cmc.model.vo.BrandVO;
 import com.mwl.mshop.provider.cmc.model.vo.PageResult;
 
 /**
@@ -10,11 +11,13 @@ public interface BrandService {
 
     String getNameById(Long id);
 
-    PageResult list(String keyword,Integer pageNum, Integer pageSize);
+    PageResult list(String keyword, Integer pageNum, Integer pageSize);
 
     Boolean updateShowStatus(Long id, Integer showStatus);
 
     Boolean updateFactoryStatus(Long id, Integer factoryStatus);
 
     Boolean deleteBrand(Long id);
+
+    boolean createBrand(BrandVO brandVO);
 }

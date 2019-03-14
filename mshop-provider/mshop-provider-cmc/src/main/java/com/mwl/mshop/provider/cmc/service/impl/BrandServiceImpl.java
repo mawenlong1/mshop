@@ -4,10 +4,12 @@ import com.github.pagehelper.PageHelper;
 import com.mwl.mshop.provider.cmc.mapper.CmcBrandMapper;
 import com.mwl.mshop.provider.cmc.model.bean.CmcBrand;
 import com.mwl.mshop.provider.cmc.model.bean.CmcBrandExample;
+import com.mwl.mshop.provider.cmc.model.vo.BrandVO;
 import com.mwl.mshop.provider.cmc.model.vo.PageResult;
 import com.mwl.mshop.provider.cmc.service.BrandService;
 import com.mwl.mshop.provider.cmc.utils.PageUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -64,5 +66,16 @@ public class BrandServiceImpl implements BrandService {
     @Override
     public Boolean deleteBrand(Long id) {
         return brandMapper.deleteByPrimaryKey(id) == 1;
+    }
+
+    @Override
+    public boolean createBrand(BrandVO brandVO) {
+        CmcBrand cmcBrand = new CmcBrand();
+        BeanUtils.copyProperties(brandVO, cmcBrand);
+        //如果创建时首字母为空，取名称的第一个为首字母
+        if (StringUtils.isEmpty(cmcBrand.getFirstLetter())) {
+            cmcBrand.setFirstLetter(cmcBrand.getName().substring(0, 1));
+        }
+        return brandMapper.insertSelective(cmcBrand) != 0;
     }
 }

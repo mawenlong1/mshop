@@ -1,5 +1,6 @@
 package com.mwl.mshop.provider.cmc.controller;
 
+import com.mwl.mshop.provider.cmc.model.vo.BrandVO;
 import com.mwl.mshop.provider.cmc.model.vo.PageResult;
 import com.mwl.mshop.provider.cmc.model.vo.ResultVO;
 import com.mwl.mshop.provider.cmc.service.BrandService;
@@ -7,6 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,6 +26,17 @@ public class BrandController {
 
     @Autowired
     private BrandService brandService;
+
+    @ApiOperation("添加品牌")
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @ResponseBody
+    public ResultVO create(@RequestBody BrandVO brandVO) {
+        if (brandService.createBrand(brandVO)) {
+            return new ResultVO().success();
+        } else {
+            return new ResultVO().failed();
+        }
+    }
 
     @ApiOperation("分页查询品牌")
     @RequestMapping(value = "list", method = RequestMethod.GET)
