@@ -33,6 +33,7 @@ public class CommodityServiceImpl implements CommodityService {
     public PageResult list(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<CmcCommodity> res = commodityMapper.selectByExample(new CmcCommodityExample());
+        PageResult pageResult = PageUtils.convertPageData(res);
         List<CommodityVO> result = new ArrayList<>();
         for (CmcCommodity cmcCommodity : res) {
             CommodityVO tmp = new CommodityVO();
@@ -45,6 +46,7 @@ public class CommodityServiceImpl implements CommodityService {
             }
             result.add(tmp);
         }
-        return PageUtils.convertPageData(res, result);
+        pageResult.setList(result);
+        return pageResult;
     }
 }

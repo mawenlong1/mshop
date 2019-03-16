@@ -4,15 +4,12 @@ import com.github.pagehelper.PageHelper;
 import com.mwl.mshop.provider.cmc.mapper.CmcCommodityAttributeCategoryMapper;
 import com.mwl.mshop.provider.cmc.model.bean.CmcCommodityAttributeCategory;
 import com.mwl.mshop.provider.cmc.model.bean.CmcCommodityAttributeCategoryExample;
-import com.mwl.mshop.provider.cmc.model.vo.CommodityAttributeCategoryVO;
 import com.mwl.mshop.provider.cmc.model.vo.PageResult;
 import com.mwl.mshop.provider.cmc.service.CommodityAttributeCategoryService;
 import com.mwl.mshop.provider.cmc.utils.PageUtils;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,11 +25,8 @@ public class CommodityAttributeCategoryServiceImpl implements CommodityAttribute
     @Override
     public PageResult list(Integer pageSize, Integer pageNum) {
         PageHelper.startPage(pageNum, pageSize);
-        List<CommodityAttributeCategoryVO> result = new ArrayList<>();
         List<CmcCommodityAttributeCategory> attributeCategories =
                 attributeCategoryMapper.selectByExample(new CmcCommodityAttributeCategoryExample());
-
-        BeanUtils.copyProperties(attributeCategories, result);
-        return PageUtils.convertPageData(attributeCategories, attributeCategories);
+        return PageUtils.convertPageData(attributeCategories);
     }
 }

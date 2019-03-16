@@ -42,7 +42,7 @@ public class BrandServiceImpl implements BrandService {
             criteria.andNameLike("%" + keyword + "%");
         }
         List<CmcBrand> cmcBrandList = brandMapper.selectByExample(example);
-        return PageUtils.convertPageData(cmcBrandList, cmcBrandList);
+        return PageUtils.convertPageData(cmcBrandList);
     }
 
     @Override
