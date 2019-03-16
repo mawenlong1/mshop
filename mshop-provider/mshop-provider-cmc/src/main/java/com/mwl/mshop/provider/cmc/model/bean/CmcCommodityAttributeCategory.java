@@ -23,12 +23,12 @@ public class CmcCommodityAttributeCategory {
     /**
      * 属性数量
      */
-    private Integer attributeCount;
+    private Integer attributeCount = 0;
 
     /**
      * 参数数量
      */
-    private Integer paramCount;
+    private Integer paramCount = 0;
 
 
 }

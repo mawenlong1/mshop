@@ -29,4 +29,24 @@ public class CommodityAttributeCategoryServiceImpl implements CommodityAttribute
                 attributeCategoryMapper.selectByExample(new CmcCommodityAttributeCategoryExample());
         return PageUtils.convertPageData(attributeCategories);
     }
+
+    @Override
+    public boolean update(Long id, String name) {
+        CmcCommodityAttributeCategory category = new CmcCommodityAttributeCategory();
+        category.setId(id);
+        category.setName(name);
+        return attributeCategoryMapper.updateByPrimaryKeySelective(category) == 1;
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        return attributeCategoryMapper.deleteByPrimaryKey(id) == 1;
+    }
+
+    @Override
+    public boolean create(String name) {
+        CmcCommodityAttributeCategory category = new CmcCommodityAttributeCategory();
+        category.setName(name);
+        return attributeCategoryMapper.insert(category) == 1;
+    }
 }

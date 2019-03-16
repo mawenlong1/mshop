@@ -198,7 +198,7 @@
       commodity_count, commodity_comment_count, 
       logo, big_pic, brand_story
       )
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{firstLetter,jdbcType=VARCHAR}, 
+    values (#{name,jdbcType=VARCHAR}, #{firstLetter,jdbcType=VARCHAR},
       #{sort,jdbcType=INTEGER}, #{factoryStatus,jdbcType=INTEGER}, #{showStatus,jdbcType=INTEGER}, 
       #{commodityCount,jdbcType=INTEGER}, #{commodityCommentCount,jdbcType=INTEGER}, 
       #{logo,jdbcType=VARCHAR}, #{bigPic,jdbcType=VARCHAR}, #{brandStory,jdbcType=LONGVARCHAR}
@@ -210,7 +210,6 @@
     </selectKey>
     insert into cmc_brand
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      id,
       <if test="name != null">
         name,
       </if>

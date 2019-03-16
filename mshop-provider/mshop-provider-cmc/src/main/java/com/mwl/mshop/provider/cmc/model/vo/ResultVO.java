@@ -67,4 +67,14 @@ public class ResultVO {
         this.message = "操作失败";
         return this;
     }
+
+    /**
+     * 普通失败提示信息
+     */
+    public ResultVO failed(String message) {
+        this.code = FAILED;
+        this.message = "操作失败";
+        data = message;
+        return this;
+    }
 }

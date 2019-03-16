@@ -10,4 +10,10 @@ public interface CommodityAttributeCategoryService {
 
 
     PageResult list(Integer pageSize, Integer PageNum);
+
+    boolean update(Long id,String name);
+
+    boolean delete(Long id);
+
+    boolean create(String name);
 }
