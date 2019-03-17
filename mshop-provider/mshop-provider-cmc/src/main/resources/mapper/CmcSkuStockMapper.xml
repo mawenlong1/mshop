@@ -153,11 +153,11 @@
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
       select uuid_short()
     </selectKey>
-    insert into cmc_sku_stock (id, product_id, sku_code, 
+    insert into cmc_sku_stock ( product_id, sku_code,
       price, stock, low_stock, 
       sps, pic, sale, lock_stock
       )
-    values (#{id,jdbcType=BIGINT}, #{productId,jdbcType=BIGINT}, #{skuCode,jdbcType=VARCHAR}, 
+    values (#{productId,jdbcType=BIGINT}, #{skuCode,jdbcType=VARCHAR},
       #{price,jdbcType=DECIMAL}, #{stock,jdbcType=INTEGER}, #{lowStock,jdbcType=INTEGER}, 
       #{sps,jdbcType=VARCHAR}, #{pic,jdbcType=VARCHAR}, #{sale,jdbcType=INTEGER}, #{lockStock,jdbcType=INTEGER}
       )
@@ -173,7 +173,6 @@
     </selectKey>
     insert into cmc_sku_stock
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      id,
       <if test="productId != null">
         product_id,
       </if>
@@ -203,7 +202,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      #{id,jdbcType=BIGINT},
       <if test="productId != null">
         #{productId,jdbcType=BIGINT},
       </if>

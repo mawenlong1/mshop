@@ -194,12 +194,12 @@
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
       select uuid_short()
     </selectKey>
-    insert into cmc_commodity_category (id, parent_id, name, 
+    insert into cmc_commodity_category ( parent_id, name,
       level, commodity_count, commodity_unit, 
       nav_status, show_status, sort, 
       icon, keywords, description
       )
-    values (#{id,jdbcType=BIGINT}, #{parentId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
+    values (#{parentId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR},
       #{level,jdbcType=INTEGER}, #{commodityCount,jdbcType=INTEGER}, #{commodityUnit,jdbcType=VARCHAR}, 
       #{navStatus,jdbcType=INTEGER}, #{showStatus,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, 
       #{icon,jdbcType=VARCHAR}, #{keywords,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR}
@@ -216,7 +216,6 @@
     </selectKey>
     insert into cmc_commodity_category
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      id,
       <if test="parentId != null">
         parent_id,
       </if>
@@ -252,7 +251,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      #{id,jdbcType=BIGINT},
       <if test="parentId != null">
         #{parentId,jdbcType=BIGINT},
       </if>

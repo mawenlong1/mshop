@@ -242,7 +242,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      #{id,jdbcType=BIGINT},
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>

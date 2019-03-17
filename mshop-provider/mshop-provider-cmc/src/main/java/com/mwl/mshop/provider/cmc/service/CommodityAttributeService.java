@@ -1,6 +1,8 @@
 package com.mwl.mshop.provider.cmc.service;
 
 import com.mwl.mshop.provider.cmc.model.bean.CmcCommodityAttribute;
+import com.mwl.mshop.provider.cmc.model.request.CommodityAttributeRequest;
+import com.mwl.mshop.provider.cmc.model.vo.CommodityAttributeVO;
 
 import java.util.List;
 
@@ -11,4 +13,10 @@ import java.util.List;
 public interface CommodityAttributeService {
 
     List<CmcCommodityAttribute> getList(Long cid, Integer type, Integer pageSize, Integer pageNum);
+
+    boolean update(Long id, CommodityAttributeRequest commodityAttributeRequest);
+
+    CommodityAttributeVO getById(Long id);
+
+    boolean create(CommodityAttributeRequest commodityAttributeRequest);
 }

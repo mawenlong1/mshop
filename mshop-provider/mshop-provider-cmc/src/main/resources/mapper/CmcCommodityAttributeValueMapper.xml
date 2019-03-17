@@ -147,9 +147,9 @@
     <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
       select uuid_short()
     </selectKey>
-    insert into cmc_commodity_attribute_value (id, commodity_id, commodity_attribute_id, 
+    insert into cmc_commodity_attribute_value ( commodity_id, commodity_attribute_id,
       value)
-    values (#{id,jdbcType=BIGINT}, #{commodityId,jdbcType=BIGINT}, #{commodityAttributeId,jdbcType=BIGINT}, 
+    values (#{commodityId,jdbcType=BIGINT}, #{commodityAttributeId,jdbcType=BIGINT},
       #{value,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.mwl.mshop.provider.cmc.model.bean.CmcCommodityAttributeValue">
@@ -163,7 +163,6 @@
     </selectKey>
     insert into cmc_commodity_attribute_value
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      id,
       <if test="commodityId != null">
         commodity_id,
       </if>
@@ -175,7 +174,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      #{id,jdbcType=BIGINT},
       <if test="commodityId != null">
         #{commodityId,jdbcType=BIGINT},
       </if>
