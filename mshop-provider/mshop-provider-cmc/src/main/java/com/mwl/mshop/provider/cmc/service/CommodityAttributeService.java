@@ -19,4 +19,6 @@ public interface CommodityAttributeService {
     CommodityAttributeVO getById(Long id);
 
     boolean create(CommodityAttributeRequest commodityAttributeRequest);
+
+    boolean delete(Long id);
 }

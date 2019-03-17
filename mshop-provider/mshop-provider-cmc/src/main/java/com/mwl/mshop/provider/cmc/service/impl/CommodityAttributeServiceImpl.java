@@ -70,4 +70,22 @@ public class CommodityAttributeServiceImpl implements CommodityAttributeService 
         categoryMapper.updateByPrimaryKey(attributeCategory);
         return true;
     }
+
+    @Override
+    public boolean delete(Long id) {
+        CmcCommodityAttribute attribute = commodityAttributeMapper.selectByPrimaryKey(id);
+        // 删除属性
+        commodityAttributeMapper.deleteByPrimaryKey(id);
+        CmcCommodityAttributeCategory category =
+                categoryMapper.selectByPrimaryKey(attribute.getCommodityAttributeCategoryId());
+        if (attribute.getType() == 0) {
+            category.setAttributeCount(category.getAttributeCount() - 1);
+        } else if (attribute.getType() == 1) {
+            category.setParamCount(category.getParamCount() - 1);
+        } else {
+            return false;
+        }
+        categoryMapper.updateByPrimaryKey(category);
+        return true;
+    }
 }

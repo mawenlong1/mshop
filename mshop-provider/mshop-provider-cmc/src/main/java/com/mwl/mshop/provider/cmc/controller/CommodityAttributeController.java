@@ -68,4 +68,14 @@ public class CommodityAttributeController {
             return new ResultVO().failed("更新失败");
         }
     }
+
+    @RequestMapping(value = "/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Object delete(@RequestParam("id")Long id){
+        if ( commodityAttributeService.delete(id)) {
+            return new ResultVO().success();
+        } else {
+            return new ResultVO().failed("删除失败");
+        }
+    }
 }
