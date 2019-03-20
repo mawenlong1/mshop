@@ -23,4 +23,6 @@ public interface CommodityCategoryService {
     boolean delete(Long id);
 
     CommodityCategoryVO getById(Long id);
+
+    boolean update(Long id, CommodityCategoryVO commodityCategoryVO);
 }

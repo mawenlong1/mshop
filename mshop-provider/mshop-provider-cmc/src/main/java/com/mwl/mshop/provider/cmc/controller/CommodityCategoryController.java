@@ -9,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -88,5 +89,16 @@ public class CommodityCategoryController {
     public ResultVO getItem(@PathVariable Long id) {
         CommodityCategoryVO productCategory = commodityCategoryService.getById(id);
         return new ResultVO().success(productCategory);
+    }
+
+    @ApiOperation("修改商品分类")
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    @ResponseBody
+    public ResultVO update(@PathVariable Long id, @RequestBody CommodityCategoryVO commodityCategoryVO) {
+        if (commodityCategoryService.update(id, commodityCategoryVO)) {
+            return new ResultVO().success();
+        } else {
+            return new ResultVO().failed();
+        }
     }
 }

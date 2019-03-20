@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mwl.mshop.provider.cmc.mapper.dao.CmcCommodityAttributeDao">
+  <select id="getCommodityAttrInfo" resultType="com.mwl.mshop.provider.cmc.model.vo.CommodityAttrInfoVO">
+        SELECT
+            pa.id  attributeId,
+            pac.id attributeCategoryId
+        FROM
+            cmc_commodity_category_attribute_relation pcar
+            LEFT JOIN cmc_commodity_attribute pa ON pa.id = pcar.product_attribute_id
+            LEFT JOIN cmc_commodity_attribute_category pac ON pa.product_attribute_category_id = pac.id
+        WHERE
+            pcar.product_category_id = #{id}
+    </select>
+</mapper>

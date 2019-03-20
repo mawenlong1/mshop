@@ -27,6 +27,7 @@ public class CommodityAttributeServiceImpl implements CommodityAttributeService 
     @Autowired
     private CmcCommodityAttributeCategoryMapper categoryMapper;
 
+
     @Override
     public List<CmcCommodityAttribute> getList(Long cid, Integer type, Integer pageSize, Integer pageNum) {
         PageHelper.startPage(pageNum, pageSize);

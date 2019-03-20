@@ -73,4 +73,12 @@ public class CommodityCategoryServiceImpl implements CommodityCategoryService {
         BeanUtils.copyProperties(category, result);
         return result;
     }
+
+    @Override
+    public boolean update(Long id, CommodityCategoryVO commodityCategoryVO) {
+        CmcCommodityCategory category = new CmcCommodityCategory();
+        category.setId(id);
+        BeanUtils.copyProperties(commodityCategoryVO, category);
+        return categoryMapper.updateByPrimaryKeySelective(category) == 1;
+    }
 }
