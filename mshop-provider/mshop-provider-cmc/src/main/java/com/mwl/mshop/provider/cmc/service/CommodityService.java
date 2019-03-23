@@ -1,5 +1,6 @@
 package com.mwl.mshop.provider.cmc.service;
 
+import com.mwl.mshop.provider.cmc.model.vo.CommodityVO;
 import com.mwl.mshop.provider.cmc.model.vo.PageResult;
 
 /**
@@ -9,4 +10,6 @@ import com.mwl.mshop.provider.cmc.model.vo.PageResult;
 public interface CommodityService {
 
     PageResult list(Integer pageNum, Integer pageSize);
+
+    boolean create(CommodityVO commodityVO);
 }

@@ -49,4 +49,9 @@ public class CommodityServiceImpl implements CommodityService {
         pageResult.setList(result);
         return pageResult;
     }
+
+    @Override
+    public boolean create(CommodityVO commodityVO) {
+        return false;
+    }
 }
