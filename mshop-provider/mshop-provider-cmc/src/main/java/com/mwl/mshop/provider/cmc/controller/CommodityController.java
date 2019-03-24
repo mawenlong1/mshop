@@ -7,6 +7,7 @@ import com.mwl.mshop.provider.cmc.service.CommodityService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -45,5 +46,17 @@ public class CommodityController {
             return new ResultVO().failed("创建失败！！！");
         }
     }
+
+    @ApiOperation("更新商品")
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    @ResponseBody
+    public ResultVO update(@PathVariable Long id, @RequestBody CommodityVO commodityVO ) {
+        if (commodityService.update(id, commodityVO)) {
+            return new ResultVO().success();
+        } else {
+            return new ResultVO().failed();
+        }
+    }
+
 
 }

@@ -54,4 +54,9 @@ public class CommodityServiceImpl implements CommodityService {
     public boolean create(CommodityVO commodityVO) {
         return false;
     }
+
+    @Override
+    public boolean update(Long id, CommodityVO commodityVO) {
+        return false;
+    }
 }

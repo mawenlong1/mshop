@@ -12,4 +12,6 @@ public interface CommodityService {
     PageResult list(Integer pageNum, Integer pageSize);
 
     boolean create(CommodityVO commodityVO);
+
+    boolean update(Long id, CommodityVO commodityVO);
 }
