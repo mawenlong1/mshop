@@ -52,11 +52,16 @@ public class CommodityServiceImpl implements CommodityService {
 
     @Override
     public boolean create(CommodityVO commodityVO) {
-        return false;
+        CmcCommodity commodity = new CmcCommodity();
+        BeanUtils.copyProperties(commodityVO, commodity);
+        return commodityMapper.insert(commodity) == 1;
     }
 
     @Override
     public boolean update(Long id, CommodityVO commodityVO) {
-        return false;
+        CmcCommodity commodity = new CmcCommodity();
+        BeanUtils.copyProperties(commodityVO, commodity);
+        commodity.setId(id);
+        return commodityMapper.updateByPrimaryKeySelective(commodity) == 1;
     }
 }
