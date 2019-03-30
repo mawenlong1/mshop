@@ -48,11 +48,6 @@ public class OssServiceImpl implements OssService {
         Date expiration = new Date(expireEndTime);
         // 文件大小
         long maxSize = ALIYUN_OSS_MAX_SIZE * 1024 * 1024;
-        // 回调
-//		OssCallbackParam callback = new OssCallbackParam();
-//		callback.setCallbackUrl(ALIYUN_OSS_CALLBACK);
-//		callback.setCallbackBody("filename=${object}&size=${size}&mimeType=${mimeType}&height=${imageInfo.height}&width=${imageInfo.width}");
-//		callback.setCallbackBodyType("application/x-www-form-urlencoded");
         // 提交节点
         String action = "http://" + ALIYUN_OSS_BUCKET_NAME + "." + ALIYUN_OSS_ENDPOINT;
         try {
