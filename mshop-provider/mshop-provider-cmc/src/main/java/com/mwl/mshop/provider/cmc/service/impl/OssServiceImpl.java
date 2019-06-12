@@ -25,12 +25,11 @@ public class OssServiceImpl implements OssService {
 
     private int ALIYUN_OSS_EXPIRE = 300;
     private int ALIYUN_OSS_MAX_SIZE = 10;
-    private String ALIYUN_OSS_CALLBACK = "http://localhost:7072/aliyun/oss/callback";
     private String ALIYUN_OSS_BUCKET_NAME = "mwl-mshop";
     private String ALIYUN_OSS_ENDPOINT = "oss-cn-beijing.aliyuncs.com";
     private String ALIYUN_OSS_DIR_PREFIX = "mall/images/";
-    private String accessKeyId = "test";
-    private String accessKeySecret = "test";
+    private String accessKeyId = "LTAI6OQgqmPTjAqy";
+    private String accessKeySecret = "1u34eP0fIKtCQJyzl3tJPiN9YitsXf";
 
     /**
      * 签名生成

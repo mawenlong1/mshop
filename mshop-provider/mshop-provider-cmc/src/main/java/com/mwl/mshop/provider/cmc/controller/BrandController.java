@@ -71,7 +71,7 @@ public class BrandController {
         }
     }
 
-    @ApiOperation("删除品牌")
+    @ApiOperation("根据id删除品牌")
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Object delete(@PathVariable("id") Long id) {
